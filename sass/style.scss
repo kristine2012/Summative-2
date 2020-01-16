@@ -1,0 +1,206 @@
+
+// $gray-600 : #4E7867; //secondary
+// $white : #04926D; // body background
+// $green: #C1C44D;
+//
+//
+
+@import "bootstrap-4.3.1/scss/bootstrap.scss";
+
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+#back-to-search-options {
+  margin-top: 10px;
+  margin-left: 10px;
+  background: none;
+  border-radius: 5px;
+  border-color: black;
+}
+
+#back-to-search-results {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: none;
+  border-radius: 5px;
+  border-color: black;
+}
+
+#back-to-selected-accomodation {
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-bottom: 10px;
+  background: none;
+  border-radius: 5px;
+  border-color: black;
+}
+#place {
+  margin-left: 0px;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+span {
+  padding: 5px 5px 5px 5px;
+}
+
+.tab {
+       display:inline-block;
+       margin-left: 30px;
+}
+
+.available-accomodation {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.Explore-header {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.form__group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-block {
+  margin-top: 40px;
+}
+
+.btn-viewQuote {
+  margin-left: 55px;
+}
+.input__header{
+  margin-top:500px;
+  text-align: center;
+}
+
+//landing page start
+.container-main {
+  // background-image: url("../images/mobile-landing-image.jpg");
+  // position: relative;
+  // //background-color: #0099CC;/* Used if the image is unavailable */
+  // height: 667px; /* You must set a specified height */
+  // width: 375px;
+  width:100%;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.carousel-control-prev {
+  color: black;
+  opacity: 1;
+}
+
+.logo-main{
+    margin-right: 100px;
+    margin-top: 15px
+
+}
+//
+// #triangle-bottomright {
+//   width: 100px;
+//   height: 0px;
+//   border-bottom: 667px solid black;
+//   border-left:375px solid transparent;
+// }
+
+//landing page finish
+
+// input page start
+#search-destination {
+  background: url(1.jpg) no-repeat;
+  padding-left:25px;
+}
+.form-control-search-icon{
+  // background: url(images/search_icon.png) no-repeat scroll 7px 7px;
+  // // padding-left:30px;
+}
+.search-icon {
+  width: 50px;
+  height:auto;
+}
+
+.back-button {
+  width:30px;
+  // height: 100px;
+//   object-fit: cover;
+// }
+}
+.logo-main {
+  width: 50px;
+  z-index: 1000;
+  margin-left:0px;
+}
+
+
+// plus and minus function
+span {cursor:pointer; }
+  .number{
+    margin:100px;
+  }
+  .minus, .plus{
+    // width:20px;
+    // height:20px;
+    background:#0099cc;
+    border-radius:4px;
+  //   // padding:8px 5px 8px 5px;
+  //   // padding: 2px;
+  //   border:1px solid #ddd;
+  //   display: inline-block;
+  //   vertical-align: middle;
+    color:black;
+  //   text-align: center;
+  //
+  }
+  input {
+    height:34px;
+    width: 100px;
+    text-align: center;
+    font-size: 26px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.form-check-label{}
+
+.form-check-input {
+  margin-right: 20px;
+  margin-top: -5px;
+}
+
+// input page finish
+
+.fas {
+  color: #0099cc;
+  font-size: 35px;
+}
+ .cards {
+   margin-top: 20px;
+ }
+
+// FINAL PAGE START
+.container-last-page {
+  background-image: url("../images/mobile-final-page-image.jpg");
+  position: relative;
+  //background-color: #0099CC;/* Used if the image is unavailable */
+  height: 667px; /* You must set a specified height */
+  width: 375px;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+// FINAL PAGE FINISH
+
+
+#search-results,
+#selected-accomodation {
+  display: none;
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tourism New Zealand</title>
+  </head>
+  <body>
+
+    <!-- Main start -->
+    <main id="main-container">
+      <!-- Welcome start -->
+      <section>
+        <div class="container-fluid container-main">
+          <img  class="logo-main" src="images/fern-logo-mobile.png" alt="logo"/>
+        </div>
+      </section>
+      <!-- Welcome end -->
+
+      <!-- Search options start -->
+      <section id="search-options">
+          <div class="container text-center">
+              <h3 class="Explore-header">Explore places to stay in <br> Aotearoa</h3>
+
+              <form>
+                  <div class="form__row">
+                      <div class="form__group col">
+                          <label for="location">Choose a beautiful place in Aotearoa</label>
+
+                          <select class="form-control" id="location">
+                              <option value="Queenstown">Queenstown</option>
+                              <option value="Wellington">Wellington</option>
+                              <option value="Auckland">Auckland</option>
+                          </select>
+                      </div>
+
+                      <div class="form__group">
+                          <label for="startDate" class="h6 white">Select check in date</label>
+                          <input type="text" class="form-control" id="startDate" placeholder="dd-mm-yyyy">
+                      </div>
+                      <div class="form__group">
+                          <label for="endDate" class="h6 white">Select check out date</label>
+                          <input type="text" class="form-control" id="endDate" placeholder="dd-mm-yyyy">
+                      </div>
+
+                      <!-- plus and minus function start -->
+                      <div class="form__group">
+                          <label for="number-guests" class="h6 white">Select number of guests</label>
+                      </div>
+
+                      <div class="form__group">
+                        <div class="justify-content-center">
+                          <div class="number-of-guests">
+                              <button type="button" name="button" class="btn  btn-secondary minus"> - </button>
+                              <input id="number-guests" type="text" value="1" />
+                              <button type="button" name="button" class="btn btn-secondary plus"> + </button>
+                          </div>
+                        </div>
+                      </div >
+                      <!-- plus and minus function finish-->
+                      <button id="filter-main" type="button" class="btn btn-primary btn-lg btn-block">Search accomodation</button>
+                  </div>
+              </form>
+          </div>
+      </section>
+      <!-- Search options end -->
+
+      <!-- Search results start -->
+      <section id="search-results">
+        <div class="container">
+          <button type="button" id="back-to-search-options" aria-label="Close"><span aria-hidden="true">Back to search options</span></button>'
+          <h2>Search results</h2>
+
+          <!-- Back to search options -->
+          <div class="header">
+            <h3 class="available-accomodation">Available accomodation</h3>
+          </div>
+
+          <div id='cards'>
+            <!-- Display cards here -->
+          </div>
+        </div>
+      </section>
+      <!-- Search results end -->
+
+      <!-- Selected accomodation start -->
+      <section id="selected-accomodation">
+        <div class="container">
+          <div id="selected-accomodation-content"></div>
+        </div>
+      </section>
+      <!-- Selected accomodation end -->
+
+      <!-- Create a quote start -->
+      <section id="calculated-quote">
+        <div class="container">
+          <div id="quote-content"></div>
+        </div>
+      </section>
+      <!-- Create a quote end -->
+
+
+      <!-- Modal - accomodation map -->
+      <div class="modal fade" id="viewMap" tabindex="-1" role="dialog" aria-labelledby="Accommodation location" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="exampleModalLabel">View Accomodation Location</h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Google Map goes here -->
+              <div id="map" style="width: 100%; height: 400px;"></div>
+              <!-- Google Map finishes here -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal - booking success message -->
+      <div class="modal fade" id="success-message" tabindex="-1" role="dialog" aria-labelledby="Success message" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="exampleModalLabel">Success</h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3>Tu meke! Your booking was successful.</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JavaScript files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <!--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ1eVAAXVghtwNL9Hf81YCZN-lez8AZMQ"></script> -->
+    <!-- <script src="sweetalert2/dist/sweetalert2.min.js"></script> -->
+    <script src="js/config.json"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
